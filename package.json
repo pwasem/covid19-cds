@@ -1,0 +1,41 @@
+{
+  "name": "covid19-cds",
+  "version": "0.3.0",
+  "description": "covid19 time series via @sap/cds",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@sap/cds": "^3",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "change-case": "^4.1.1",
+    "data.js": "^0.12.11",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "fs-extra": "^9.0.0",
+    "grunt": "^1.1.0",
+    "sqlite3": "^4.1.1"
+  },
+  "scripts": {
+    "prestart": "npx grunt && npx cds deploy",
+    "start": "npx cds run",
+    "patch": "npm --no-git-tag-version version patch",
+    "minor": "npm --no-git-tag-version version minor",
+    "major": "npm --no-git-tag-version version major"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "persistent/covid19.db"
+        }
+      }
+    }
+  }
+}
