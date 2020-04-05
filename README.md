@@ -28,7 +28,7 @@ npm i
 npm start
 ```
 
-Afterwards you can browse to [localhost:4004](http://localhost:4004) and start retrieving time series from the service using [OData v4 requests](https://www.odata.org/documentation/)
+Afterwards you can browse to [localhost:4004](http://localhost:4004) and start retrieving time series from the service using [OData v4](https://www.odata.org/documentation/) requests.
 
 ## Behind the scenes
 
