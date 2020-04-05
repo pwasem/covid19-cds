@@ -6,7 +6,6 @@ const finished = util.promisify(stream.finished)
 const changeCase = require('change-case')
 const { Dataset } = require('data.js')
 
-// @see https://datahub.io/core/covid-19#javascript
 const endpoint = 'https://datahub.io/core/covid-19/datapackage.json'
 const names = ['countries-aggregated']
 
@@ -24,6 +23,7 @@ module.exports = (grunt) => async function () {
       const { name, format } = resource._descriptor
       // filter resources
       if (format === 'csv' && names.includes(name)) {
+        // write resource to .csv files
         const readable = await resource.stream()
         const filepath = path.join(dirpath, `covid19-${changeCase.pascalCase(name)}.csv`)
         const writable = fs.createWriteStream(filepath)

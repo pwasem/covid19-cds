@@ -1,6 +1,6 @@
 {
   "name": "covid19-cds",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "covid19 time series via @sap/cds",
   "license": "MIT",
   "private": false,
