@@ -1,11 +1,16 @@
 {
   "name": "covid19-cds",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "covid19 time series via @sap/cds",
   "license": "MIT",
   "private": false,
+  "main": "index.js",
   "dependencies": {
+    "@awaitjs/express": "^0.5.1",
     "@sap/cds": "^3",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.22",
+    "cf-nodejs-logging-support": "^6.1.2",
+    "cfenv": "^1.2.2",
     "express": "^4"
   },
   "devDependencies": {
@@ -23,7 +28,7 @@
   },
   "scripts": {
     "prestart": "npx grunt && npx cds deploy",
-    "start": "npx cds run",
+    "start": "node index.js",
     "patch": "npm --no-git-tag-version version patch",
     "minor": "npm --no-git-tag-version version minor",
     "major": "npm --no-git-tag-version version major"
